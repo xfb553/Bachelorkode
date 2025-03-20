@@ -272,9 +272,9 @@ crit_z2 <- rep(NA,length(signi_values))
   
 
   for (i in 1:M) {
-    results_H0_esr[[i]] <- esr_backtest(r=x_recent[,i], e=es0_recent[,i],  alpha=0.975 )$t0
+    results_H0_esr[[i]] <- esr_backtest(r=x_recent[,i], e=-es0_recent[,i],  alpha=0.975 )$t0
     
-    results_H1_esr[[i]] <- esr_backtest(r=x_recent[,i], e=es1_hs_recent[,i],  alpha=0.975 )$t0
+    results_H1_esr[[i]] <- esr_backtest(r=x_recent[,i], e=-es1_hs_recent[,i],  alpha=0.975 )$t0
     
     results_H0_cc[[i]] <- cc_backtest(r = x_recent[,i], q = var0_recent[,i], e = es0_recent[,i], alpha = 0.975, s = sigma_matrix_hs_recent[,i])$min_t2
     
